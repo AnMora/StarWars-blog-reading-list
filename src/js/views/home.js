@@ -1,15 +1,31 @@
 import React from "react";
-import rigoImage from "../../img/rigo-baby.jpg";
+import { Link } from "react-router-dom";
+import { Carousel, CarouselItem, CarouselItemProps, CarouselProps } from "react-bootstrap";
 import "../../styles/home.scss";
 
 export const Home = () => (
-	<div className="text-center mt-5">
-		<h1>Hello Rigo!</h1>
-		<p>
-			<img src={rigoImage} />
-		</p>
-		<a href="#" className="btn btn-success">
-			If you see this green button, bootstrap is working
-		</a>
-	</div>
+	<Carousel className="Carousel">
+		<Carousel.Item interval={3000}>
+			<Link to="/demo">
+				<img
+					className="d-block w-100"
+					src="https://www.xtrafondos.com/wallpapers/resized/todos-los-personajes-de-star-wars-2307.jpg?s=large"
+					alt="Characters"
+				/>
+				<Carousel.Caption>
+					<h3>Personajes</h3>
+					<p>Descripcion de personajes</p>
+				</Carousel.Caption>
+			</Link>
+		</Carousel.Item>
+		<Carousel.Item interval={3000}>
+			<Link to="/planets">
+				<img className="d-block w-100" src="https://wallpapercave.com/wp/wp8179241.jpg" alt="Planets" />
+				<Carousel.Caption>
+					<h3>Planetas</h3>
+					<p>Descripcion de planetas</p>
+				</Carousel.Caption>
+			</Link>
+		</Carousel.Item>
+	</Carousel>
 );
