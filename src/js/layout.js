@@ -5,11 +5,11 @@ import ScrollToTop from "./component/scrollToTop";
 import { Home } from "./views/home";
 import { Demo } from "./views/demo";
 import { Single } from "./views/single";
-import injectContext from "./store/appContext";
-
+import { Information } from "./component/info";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 
+import injectContext from "./store/appContext";
 //create your first component
 const Layout = () => {
 	//the basename is used when your project is published in a subdirectory and not in the root of the domain
@@ -24,6 +24,9 @@ const Layout = () => {
 					<Switch>
 						<Route exact path="/">
 							<Home />
+						</Route>
+						<Route exact path="/info">
+							<Information />
 						</Route>
 						<Route exact path="/demo">
 							<Demo />

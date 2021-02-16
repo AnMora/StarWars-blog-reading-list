@@ -6,7 +6,7 @@ import "../../styles/home.scss";
 export const Home = () => (
 	<Carousel className="Carousel">
 		<Carousel.Item interval={3000}>
-			<Link to="/demo">
+			<Link to="/info">
 				<img
 					className="d-block w-100"
 					src="https://www.xtrafondos.com/wallpapers/resized/todos-los-personajes-de-star-wars-2307.jpg?s=large"
@@ -19,7 +19,7 @@ export const Home = () => (
 			</Link>
 		</Carousel.Item>
 		<Carousel.Item interval={3000}>
-			<Link to="/planets">
+			<Link to="/info">
 				<img className="d-block w-100" src="https://wallpapercave.com/wp/wp8179241.jpg" alt="Planets" />
 				<Carousel.Caption>
 					<h3>Planetas</h3>
