@@ -5,6 +5,9 @@ import { Context } from "../store/appContext";
 
 import "../../styles/demo.scss";
 
+//https://www.swapi.tech/documentation
+//API que hay que usar
+
 export const Demo = () => {
 	const { store, actions } = useContext(Context);
 

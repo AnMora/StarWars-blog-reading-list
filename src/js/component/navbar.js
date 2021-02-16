@@ -11,7 +11,7 @@ export const Navbar = () => {
 				<img className="LOGO" src={AnMora} alt="MORA" />
 			</Link>
 			<div className="ml-auto">
-				<Link to="/demo">
+				<Link to="/planets">
 					<button className="btn btn-primary">Check the Context in action</button>
 				</Link>
 			</div>
