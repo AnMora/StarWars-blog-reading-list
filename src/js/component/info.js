@@ -23,7 +23,7 @@ export const Information = () => (
 						</Card.Body>
 						<Card.Footer>
 							<ButtonToolbar className="d-flex justify-content-between">
-								<Link to={"/component/read"}>
+								<Link to="/readmore">
 									<Button variant="outline-info">read more..</Button>
 								</Link>
 								<Link onClick={() => actions.addFavorite(info.name, "planets")}>
