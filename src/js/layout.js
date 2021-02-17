@@ -3,9 +3,10 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./views/home";
-import { Demo } from "./views/demo";
+//import { Demo } from "./views/demo";
 import { Single } from "./views/single";
 import { Information } from "./component/info";
+import { Read } from "./component/readmore";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 
@@ -28,8 +29,8 @@ const Layout = () => {
 						<Route exact path="/info">
 							<Information />
 						</Route>
-						<Route exact path="/demo">
-							<Demo />
+						<Route exact path="/readmore">
+							<Read />
 						</Route>
 						<Route exact path="/single/:theid">
 							<Single />
