@@ -23,7 +23,7 @@ export const Navbar = () => {
 				/>
 			</Link>
 			<div className="ml-auto">
-				<Link>
+				<Link to="/">
 					<DropdownButton id="dropdown-basic-button" title="Favoritos">
 						<Dropdown.Item href="#/action-1">Action</Dropdown.Item>
 						<Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
