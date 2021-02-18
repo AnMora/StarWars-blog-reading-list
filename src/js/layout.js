@@ -5,10 +5,12 @@ import ScrollToTop from "./component/scrollToTop";
 import { Home } from "./views/home";
 //import { Demo } from "./views/demo";
 import { Single } from "./views/single";
-import { Information } from "./component/info";
 import { Read } from "./component/readmore";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
+import { Planets } from "./component/planets";
+import { Character } from "./component/character";
+import { Vehicles } from "./component/vehicle";
 
 import injectContext from "./store/appContext";
 //create your first component
@@ -16,6 +18,7 @@ const Layout = () => {
 	//the basename is used when your project is published in a subdirectory and not in the root of the domain
 	// you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
 	const basename = process.env.BASENAME || "";
+	//const { store, actions } = useContext(Context);
 
 	return (
 		<div className="d-flex flex-column">
@@ -26,17 +29,17 @@ const Layout = () => {
 						<Route exact path="/">
 							<Home />
 						</Route>
-						<Route exact path="/info">
-							<Information />
+						<Route exact path="/character">
+							<Character />
 						</Route>
-						<Route exact path="/readmore">
-							<Read />
+						<Route exact path="/planets">
+							<Planets />
+						</Route>
+						<Route exact path="/vehicle">
+							<Vehicles />
 						</Route>
 						<Route exact path="/single/:theid">
 							<Single />
-						</Route>
-						<Route>
-							<h1>Not found!</h1>
 						</Route>
 					</Switch>
 					<Footer />
