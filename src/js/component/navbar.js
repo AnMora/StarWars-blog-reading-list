@@ -1,18 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 //import AnMora from "../../img/MORAnew (1).png";
 import "../../styles/home.scss";
-import {
-	Dropdown,
-	DropdownButton,
-	DropdownButtonProps,
-	DropdownProps,
-	DropdownType,
-	SplitButton,
-	ButtonGroup
-} from "react-bootstrap";
+import { Container, Dropdown, DropdownButton } from "react-bootstrap";
+import { Context } from "../store/appContext";
 
 export const Navbar = () => {
+	const { store, actions } = useContext(Context);
+
 	return (
 		<nav className="navbar navbar-dark bg-light">
 			<Link to="/">
@@ -23,13 +18,39 @@ export const Navbar = () => {
 				/>
 			</Link>
 			<div className="ml-auto">
-				<Link to="/">
-					<DropdownButton id="dropdown-basic-button" title="Favoritos">
-						<Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-						<Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-						<Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-					</DropdownButton>
-				</Link>
+				{/* <Link to="/"> */}
+				<DropdownButton id="dropdown-basic-button" variant="dark" title={"Favorites " + store.favorites.length}>
+					{store.favorites.length == 0 ? (
+						<Dropdown.Item>Empty</Dropdown.Item>
+					) : (
+						store.favorites.map((favorite, i) => {
+							return (
+								<Dropdown.Item eventKey={i} key={i} onClick={() => actions.deleteFavorite(i)}>
+									{favorite.type == "people" ? (
+										<div>
+											<i className="fas fa-id-card">
+												&nbsp;
+												{favorite.name}
+											</i>
+											&nbsp;&nbsp;&nbsp;
+											<i className="far fa-trash-alt" />
+										</div>
+									) : (
+										<div>
+											<i className="fas fa-globe-americas">
+												&nbsp;
+												{favorite.name}
+											</i>
+											&nbsp;&nbsp;&nbsp;
+											<i className="far fa-trash-alt" />
+										</div>
+									)}
+								</Dropdown.Item>
+							);
+						})
+					)}
+				</DropdownButton>
+				{/* </Link> */}
 			</div>
 		</nav>
 	);
