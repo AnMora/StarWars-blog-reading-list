@@ -1,17 +1,18 @@
-import React, { useContext } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { Container, Row, Col, Card, Button, ButtonToolbar, Modal } from "react-bootstrap";
 import "../../styles/home.scss";
 import { Context } from "../store/appContext";
 import PropTypes from "prop-types";
 
-export const Planets = () => {
+export const Planets = props => {
 	const { store, actions } = useContext(Context);
+	const [searchItem, setSearch] = useState();
 
 	return (
 		<Container fluid>
 			<Row>
-				{store.planets.map((element, index) => (
+				{store.info.map((element, index) => (
 					<Col key={index} md={3} className="mt-1 mb-1">
 						<Card>
 							<Card.Img

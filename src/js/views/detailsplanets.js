@@ -6,7 +6,7 @@ import { Context } from "../store/appContext";
 import { useParams } from "react-router-dom";
 //import Example from "./readmore";
 
-export const DetailsCharacter = () => {
+export const DetailsPlanets = () => {
 	const params = useParams();
 	const { store, actions } = useContext(Context);
 	const element = store.people[params.theid];

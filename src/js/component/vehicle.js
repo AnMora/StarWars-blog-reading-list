@@ -1,18 +1,17 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Container, Row, Col, Card, Button, ButtonToolbar } from "react-bootstrap";
 import "../../styles/home.scss";
 import { Context } from "../store/appContext";
 import PropTypes from "prop-types";
 
-export const Vehicles = props => {
+export const Vehicles = () => {
 	const { store, actions } = useContext(Context);
-	const [searchItem, setSearch] = useState();
 
 	return (
 		<Container fluid>
 			<Row>
-				{props.info.map((element, index) => (
+				{store.vehicle.map((element, index) => (
 					<Col key={index} md={3} className="mt-1 mb-1">
 						<Card>
 							<Card.Img variant="top" src="https://wallpaperaccess.com/full/168208.jpg" />

@@ -1,20 +1,20 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			people: [],
-			planets: [],
-			vehicles: [],
-			favorites: []
+			characters: [], //contenedores
+			planets: [], //contenedores
+			vehicles: [], //contenedores
+			favorites: [] //contenedores
 		},
 		actions: {
-			loadPeople: async () => {
+			loadCharacters: async () => {
 				const url = "https://swapi.dev/api/people/";
 				const response = await fetch(url);
 				const info = await response.json();
-				setStore({ people: info.results });
+				setStore({ characters: info.results });
 			},
 
-			loadPlanet: async () => {
+			loadPlanets: async () => {
 				const url = "https://swapi.dev/api/planets/";
 				const response = await fetch(url);
 				const info = await response.json();
@@ -28,6 +28,21 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore({ vehicles: info.results });
 			},
 
+			loadPeopleById: async theid => {
+				const url = "https://swapi.dev/api/people/" + theid;
+				const response = await fetch(url);
+				const info = await response.json();
+				setStore({ characters: info.results });
+			},
+
+			loadPlanetsById: async theid => {
+				const url = "https://swapi.dev/api/planets/" + theid;
+				const response = await fetch(url); //da respuesta, si es 200 esta bien
+				const info = await response.json(); //lo serializa en formato o archivo json, tambien podria ser xml, txt
+				setStore({ planets: info.results }); //reservelo en un array
+			},
+
+			//actions.addFavorite(characters.name, "character")
 			addFavorite: (name, type) => {
 				const store = getStore();
 				let count = 0;

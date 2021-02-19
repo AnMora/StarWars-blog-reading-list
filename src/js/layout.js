@@ -14,7 +14,9 @@ import { Vehicles } from "./component/vehicle";
 import injectContext from "./store/appContext";
 import { Context } from "./store/appContext";
 
-import { DetailsCharacter } from "./component/detailscharacter";
+import { DetailsCharacter } from "./views/detailscharacter";
+import { DetailsPlanets } from "./views/detailsplanets";
+import { DetailsVehicles } from "./views/detailsvehicles";
 
 //create your first component
 const Layout = () => {
@@ -25,10 +27,9 @@ const Layout = () => {
 	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
-		actions.loadPeople();
-		actions.loadPlanet();
+		actions.loadCharacters();
+		actions.loadPlanets();
 		actions.loadVehicles();
-		setLoading(false);
 	}, []);
 
 	return (
@@ -43,21 +44,21 @@ const Layout = () => {
 						<Route exact path="/character">
 							<Character />
 						</Route>
-						{/* <Route exact path="/detailscharacter/:theid">
+						<Route exact path="/detailscharacter/:theid">
 							<DetailsCharacter />
-						</Route> */}
+						</Route>
 						<Route exact path="/planets">
 							<Planets />
 						</Route>
-						{/* <Route exact path="/detailsplanets/:theid">
+						<Route exact path="/detailsplanets/:theid">
 							<DetailsPlanets />
-						</Route> */}
+						</Route>
 						<Route exact path="/vehicle">
 							<Vehicles />
 						</Route>
-						{/* <Route exact path="/detailsvehicles/:theid">
+						<Route exact path="/detailsvehicles/:theid">
 							<DetailsVehicles />
-						</Route> */}
+						</Route>
 					</Switch>
 					<Footer />
 				</ScrollToTop>
