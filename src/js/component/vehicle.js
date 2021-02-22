@@ -14,7 +14,10 @@ export const Vehicles = () => {
 				{store.vehicles.map((element, index) => (
 					<Col key={index} md={3} className="mt-1 mb-1">
 						<Card>
-							<Card.Img variant="top" src="https://wallpaperaccess.com/full/168208.jpg" />
+							<Card.Img
+								variant="top"
+								src="https://memestatic1.fjcdn.com/comments/Not+a+bad+design+though+does+kinda+reminds+me+of+_c117ee3d08e124d1cfb72ad4551b4238.png"
+							/>
 							<Card.Body>
 								<Card.Title>{element.name}</Card.Title>
 								<Card.Text>
