@@ -60,6 +60,6 @@ export const Character = () => {
 	);
 };
 
-Character.propTypes = {
-	info: PropTypes.string
-};
+// Character.propTypes = {
+// 	info: PropTypes.string
+// };

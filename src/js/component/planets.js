@@ -36,7 +36,7 @@ export const Planets = () => {
 									<Link to={`/detailsplanets/${index}`}>
 										<Button variant="primary">Read more..</Button>
 									</Link>
-									<Link onClick={() => actions.addFavorite(planets.name, "planets")}>
+									<Link onClick={() => actions.addFavorite(element.name, "planets")}>
 										<Button className="outline-danger">
 											<svg
 												xmlns="http://www.w3.org/2000/svg"
@@ -57,6 +57,6 @@ export const Planets = () => {
 	);
 };
 
-Planets.propTypes = {
-	info: PropTypes.string
-};
+// Planets.propTypes = {
+// 	info: PropTypes.string
+// };

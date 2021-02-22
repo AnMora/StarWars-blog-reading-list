@@ -33,7 +33,7 @@ export const Vehicles = () => {
 									<Link to={`/detailsvehicles/${index}`}>
 										<Button variant="primary">Read more..</Button>
 									</Link>
-									<Link onClick={() => actions.addFavorite(vehicles.name, "vehicles")}>
+									<Link onClick={() => actions.addFavorite(element.name, "vehicles")}>
 										<Button className="outline-danger">
 											<svg
 												xmlns="http://www.w3.org/2000/svg"
@@ -54,6 +54,6 @@ export const Vehicles = () => {
 	);
 };
 
-Vehicles.propTypes = {
-	info: PropTypes.string
-};
+// Vehicles.propTypes = {
+// 	info: PropTypes.string
+// };
