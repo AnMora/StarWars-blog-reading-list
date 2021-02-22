@@ -11,7 +11,7 @@ export const Vehicles = () => {
 	return (
 		<Container fluid>
 			<Row>
-				{store.vehicle.map((element, index) => (
+				{store.vehicles.map((element, index) => (
 					<Col key={index} md={3} className="mt-1 mb-1">
 						<Card>
 							<Card.Img variant="top" src="https://wallpaperaccess.com/full/168208.jpg" />

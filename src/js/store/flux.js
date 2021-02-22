@@ -42,6 +42,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore({ planets: info.results }); //reservelo en un array
 			},
 
+			loadVehiclesById: async theid => {
+				const url = "https://swapi.dev/api/vehicles/" + theid;
+				const response = await fetch(url);
+				const info = await response.json();
+				setStore({ vehicles: info.results });
+			},
+
 			//actions.addFavorite(characters.name, "character")
 			addFavorite: (name, type) => {
 				const store = getStore();
