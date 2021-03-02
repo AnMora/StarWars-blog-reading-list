@@ -9,7 +9,7 @@ export const Home = () => (
 			<Link to="/character">
 				<img
 					className="d-block w-100"
-					src="http://4.bp.blogspot.com/_sO_FX2iu0XU/TUny5g3TdaI/AAAAAAAAJsY/WQgoFQaP1Cw/s1600/Star+Wars+Wallpaper.jpg"
+					src="https://i.pinimg.com/originals/f3/23/55/f32355d4790b1083ba03bfa535c497a7.jpg"
 					alt="Characters"
 				/>
 				<Carousel.Caption className="shadow">
@@ -20,11 +20,7 @@ export const Home = () => (
 		</Carousel.Item>
 		<Carousel.Item interval={3000}>
 			<Link to="/planets">
-				<img
-					className="d-block w-100"
-					src="https://www.enjpg.com/img/2020/star-wars-15-scaled.jpg"
-					alt="Planets"
-				/>
+				<img className="d-block w-100" src="https://i.imgur.com/fiKu58y.jpg" alt="Planets" />
 				<Carousel.Caption className="shadow">
 					<h3>Planetas</h3>
 					<p>Descripcion de planetas</p>
@@ -33,7 +29,7 @@ export const Home = () => (
 		</Carousel.Item>
 		<Carousel.Item interval={3000}>
 			<Link to="/vehicle">
-				<img className="d-block w-100" src="https://i.imgur.com/EUvvLfZ.jpg?fb" alt="Vehicles" />
+				<img className="d-block w-100" src="http://i.imgur.com/rE70lnQ.jpg" alt="Vehicles" />
 				<Carousel.Caption className="shadow">
 					<h3>Vehicles</h3>
 					<p>Descripcion de Vehiculos</p>

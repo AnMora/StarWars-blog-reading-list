@@ -16,7 +16,7 @@ export const Vehicles = () => {
 						<Card>
 							<Card.Img
 								variant="top"
-								src="https://memestatic1.fjcdn.com/comments/Not+a+bad+design+though+does+kinda+reminds+me+of+_c117ee3d08e124d1cfb72ad4551b4238.png"
+								src="https://static.wikia.nocookie.net/memorydelta/images/3/3d/BARCspeeder_DB.png/revision/latest?cb=20200527045655"
 							/>
 							<Card.Body>
 								<Card.Title>{element.name}</Card.Title>

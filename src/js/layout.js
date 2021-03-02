@@ -5,6 +5,7 @@ import ScrollToTop from "./component/scrollToTop";
 import { Spinner } from "react-bootstrap";
 
 import { Login } from "./login";
+import { Navlogin } from "./component/navlogin";
 import { Home } from "./views/home";
 import { Read } from "./component/readmore";
 import { Navbar } from "./component/navbar";
@@ -37,30 +38,37 @@ const Layout = () => {
 		<div className="d-flex flex-column">
 			<BrowserRouter basename={basename}>
 				<ScrollToTop>
-					<Navbar />
 					<Switch>
 						<Route exact path="/">
+							<Navlogin />
 							<Login />
 						</Route>
 						<Route exact path="/home">
+							<Navbar />
 							<Home />
 						</Route>
 						<Route exact path="/character">
+							<Navbar />
 							<Character />
 						</Route>
 						<Route exact path="/detailscharacter/:theid">
+							<Navbar />
 							<DetailsCharacter />
 						</Route>
 						<Route exact path="/planets">
+							<Navbar />
 							<Planets />
 						</Route>
 						<Route exact path="/detailsplanets/:theid">
+							<Navbar />
 							<DetailsPlanets />
 						</Route>
 						<Route exact path="/vehicle">
+							<Navbar />
 							<Vehicles />
 						</Route>
 						<Route exact path="/detailsvehicles/:theid">
+							<Navbar />
 							<DetailsVehicles />
 						</Route>
 					</Switch>

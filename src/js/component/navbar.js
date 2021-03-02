@@ -2,24 +2,27 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 //import AnMora from "../../img/MORAnew (1).png";
 import "../../styles/home.scss";
-import { Container, Dropdown, DropdownButton } from "react-bootstrap";
+import { Nav, Dropdown, DropdownButton } from "react-bootstrap";
 import { Context } from "../store/appContext";
 
 export const Navbar = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
-		<nav className="navbar navbar-dark bg-light">
-			<Link to="/">
+		<Nav className="navbar">
+			<Link to="/home">
 				<img
 					className="LOGO"
-					src="https://1000marcas.net/wp-content/uploads/2019/12/Star-Wars-Logo.png"
+					src="https://www.5minutesformom.com/wp-content/uploads/2015/08/Star-Wars-Logo.png"
 					alt="MORA"
 				/>
 			</Link>
 			<div className="ml-auto">
 				{/* <Link to="/"> */}
-				<DropdownButton id="dropdown-basic-button" variant="dark" title={"Favorites " + store.favorites.length}>
+				<DropdownButton
+					id="dropdown-basic-button"
+					variant="outline-light"
+					title={"Favorites " + store.favorites.length}>
 					{store.favorites.length == 0 ? (
 						<Dropdown.Item>Empty</Dropdown.Item>
 					) : (
@@ -52,6 +55,6 @@ export const Navbar = () => {
 				</DropdownButton>
 				{/* </Link> */}
 			</div>
-		</nav>
+		</Nav>
 	);
 };
