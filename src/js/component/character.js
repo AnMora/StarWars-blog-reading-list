@@ -18,9 +18,9 @@ export const Character = () => {
 							<Card.Body>
 								<Card.Title>{element.name}</Card.Title>
 								<Card.Text>
-									<strong>Genero: </strong>
+									{/* <strong>Genero: </strong>
 									{element.gender}
-									<br />
+									<br /> */}
 									<strong>Color de Pelo: </strong>
 									{element.hair_color}
 									<br />

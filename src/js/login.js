@@ -1,17 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Container, Jumbotron, Row, Col, Card, CardDeck, InputGroup, FormControl, Button } from "react-bootstrap";
-import "../styles/login.scss";
+import "../styles/home.scss";
 
 export const Login = () => (
 	<Container>
-		<Card className="mt-2 mb-2">
+		<Card className="Card text-light mt-2 mb-2">
 			<Card.Img
 				variant="top"
 				src="https://c4.wallpaperflare.com/wallpaper/943/490/543/star-wars-darth-vader-hd-wallpaper-preview.jpg"
 			/>
 			<Card.Body>
-				<Card.Text>
+				<Card.Text className="text-light">
 					Some quick example text to build on the card title and make up the bulk of the cards content.
 				</Card.Text>
 			</Card.Body>
@@ -20,7 +20,7 @@ export const Login = () => (
 			<Col className="mt-2 mb-2" id="Login">
 				<CardDeck>
 					{/* Card para Login */}
-					<Card className="text-center">
+					<Card className="Card text-light text-center">
 						<Card.Img
 							variant="top"
 							src="https://images.wallpapersden.com/image/download/knights-of-ren-star-wars_a21mZmqUmZqaraWkpJRnamtlrWZlbWU.jpg"
@@ -60,7 +60,7 @@ export const Login = () => (
 						</Card.Footer>
 					</Card>
 					{/* Card para Register */}
-					<Card className="text-center">
+					<Card className="Card text-light text-center">
 						<Card.Img variant="top" src="https://wallpaperaccess.com/full/3333882.jpg" />
 						<Card.Body>
 							<Card.Title>Register</Card.Title>

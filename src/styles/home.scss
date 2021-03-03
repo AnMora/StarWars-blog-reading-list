@@ -1,7 +1,38 @@
+// Estilos para el NavLogin
+.menu{
+    background: transparent;
+}
+
+
+// Estilos para el Login
 body{
+    background-attachment: fixed;
+    background-image: url("https://elcadillacnegro.files.wordpress.com/2015/12/ren_knights.gif");
+    // http://66.media.tumblr.com/34b42266b5369bea40927316c4c035a5/tumblr_n9yi0vZZQE1sajg7no1_500.gif
+    // https://pa1.narvii.com/6039/896c67c0b46df8c397e2c0c499de99fa4522a3ad_hq.gif
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
     position: relative;
 }
 
+body:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-image: -webkit-linear-gradient(0deg, #000 0%, #000 100%);
+  opacity: 0.6;
+  z-index: -1;
+}
+
+.Card{
+    background-color: transparent;
+    box-shadow: 0 0 15px #000;
+}
 // .shadow{
 //     color: #fff;
 //     text-align: center;
@@ -27,6 +58,11 @@ body{
 }
 
 //Estilos para el carousel
+.Carousel{
+    border-radius: 20px;
+    box-shadow: 0 0 15px #000;
+}
+
 .Carousel img{
     height: 85vh;
 }

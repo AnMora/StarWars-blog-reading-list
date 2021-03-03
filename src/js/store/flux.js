@@ -8,45 +8,47 @@ const getState = ({ getStore, getActions, setStore }) => {
 		},
 		actions: {
 			loadCharacters: async () => {
-				const url = "https://swapi.dev/api/people/";
+				// const url = "https://swapi.dev/api/people/";
+				const url = "https://3000-harlequin-cephalopod-k8iudvag.ws-us03.gitpod.io/character";
 				const response = await fetch(url);
 				const info = await response.json();
-				setStore({ characters: info.results });
+				// setStore({ characters: info.results });
+				setStore({ characters: info });
 			},
 
 			loadPlanets: async () => {
-				const url = "https://swapi.dev/api/planets/";
+				const url = "https://3000-harlequin-cephalopod-k8iudvag.ws-us03.gitpod.io/planets";
 				const response = await fetch(url);
 				const info = await response.json();
-				setStore({ planets: info.results });
+				setStore({ planets: info });
 			},
 
 			loadVehicles: async () => {
-				const url = "https://swapi.dev/api/vehicles/";
+				const url = "https://3000-harlequin-cephalopod-k8iudvag.ws-us03.gitpod.io/vehicles";
 				const response = await fetch(url);
 				const info = await response.json();
-				setStore({ vehicles: info.results });
+				setStore({ vehicles: info });
 			},
 
 			loadPeopleById: async theid => {
-				const url = "https://swapi.dev/api/people/" + theid;
+				const url = "https://3000-harlequin-cephalopod-k8iudvag.ws-us03.gitpod.io/character" + theid;
 				const response = await fetch(url);
 				const info = await response.json();
-				setStore({ characters: info.results });
+				setStore({ characters: info });
 			},
 
 			loadPlanetsById: async theid => {
-				const url = "https://swapi.dev/api/planets/" + theid;
+				const url = "https://3000-harlequin-cephalopod-k8iudvag.ws-us03.gitpod.io/planets" + theid;
 				const response = await fetch(url); //da respuesta, si es 200 esta bien
 				const info = await response.json(); //lo serializa en formato o archivo json, tambien podria ser xml, txt
-				setStore({ planets: info.results }); //reservelo en un array
+				setStore({ planets: info }); //reservelo en un array
 			},
 
 			loadVehiclesById: async theid => {
-				const url = "https://swapi.dev/api/vehicles/" + theid;
+				const url = "https://3000-harlequin-cephalopod-k8iudvag.ws-us03.gitpod.io/vehicles" + theid;
 				const response = await fetch(url);
 				const info = await response.json();
-				setStore({ vehicles: info.results });
+				setStore({ vehicles: info });
 			},
 
 			//actions.addFavorite(characters.name, "character")

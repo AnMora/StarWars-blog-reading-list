@@ -4,8 +4,9 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 import { Spinner } from "react-bootstrap";
 
-import { Login } from "./login";
 import { Navlogin } from "./component/navlogin";
+import { Login } from "./login";
+
 import { Home } from "./views/home";
 import { Read } from "./component/readmore";
 import { Navbar } from "./component/navbar";

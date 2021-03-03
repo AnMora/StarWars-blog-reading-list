@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 //import AnMora from "../../img/MORAnew (1).png";
-import "../../styles/login.scss";
+import "../../styles/home.scss";
 import { Nav, Dropdown, DropdownButton, Button } from "react-bootstrap";
 import { Context } from "../store/appContext";
 
