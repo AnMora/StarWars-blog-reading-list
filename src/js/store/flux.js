@@ -79,6 +79,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const newFavorites = store.favorites.filter((item, i) => i !== id);
 				setStore({ favorites: newFavorites });
 			}
+
+			// VALIDACIONES
+			// VALIDACIONES
+			// VALIDACIONES
+
+			// VALIDACION DE REGISTER
+			// VALIDACION DE REGISTER
+			// VALIDACION DE REGISTER
+			// Hola que tal
 		}
 	};
 };
