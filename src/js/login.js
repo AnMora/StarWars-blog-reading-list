@@ -1,20 +1,32 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Redirect } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { Context } from "./store/appContext";
 import { Container, Jumbotron, Row, Col, Card, CardDeck, InputGroup, FormControl, Button, Form } from "react-bootstrap";
 import "../styles/home.scss";
 
 export const Login = () => {
+	const { actions, store } = useContext(Context);
 	const [username, setUsername] = useState("");
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [redirect, setRedirect] = useState(false);
 
-	const handleSubmit = e => {
-		if (username == "" || email === "" || password === "") {
-			alert("datos necesarios");
+	const actionRegister = e => {
+		if (username === "" || email === "" || password === "") {
+			alert("Faltan datos por llenar!");
 		} else {
-			console.log(username, email, password);
+			alert(username, email);
+			actions.validacionRegistro(username, email, password);
+		}
+	};
+
+	const actionLogin = e => {
+		if (email === "" || password === "") {
+			alert("Faltan datos por llenar!");
+		} else {
+			alert(username, email);
+			actions.validacionLogin(email, password);
 		}
 	};
 
@@ -40,44 +52,51 @@ export const Login = () => {
 								variant="top"
 								src="https://images.wallpapersden.com/image/download/knights-of-ren-star-wars_a21mZmqUmZqaraWkpJRnamtlrWZlbWU.jpg"
 							/>
-							<Card.Body>
-								<Card.Title>Log In</Card.Title>
-								<Card.Text>
-									<p>Aqui podras hacer el Login a la página si ya estas registrado</p>
-									<InputGroup size="sm" className="mb-3">
+							<form onSubmit={e => actionLogin(e)}>
+								<Card.Body>
+									<Card.Title>Log In</Card.Title>
+									<Card.Text>
+										<p>Aqui podras hacer el Login a la página si ya estas registrado</p>
+										{/* <InputGroup size="sm" className="mb-3">
 										<InputGroup.Prepend>
-											<InputGroup.Text id="inputGroup-sizing-sm">Name</InputGroup.Text>
+											<InputGroup.Text id="inputGroup-sizing-sm">Username</InputGroup.Text>
 										</InputGroup.Prepend>
 										<FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
-									</InputGroup>
-									<InputGroup size="sm" className="mb-3">
-										<InputGroup.Prepend>
-											<InputGroup.Text id="inputGroup-sizing-sm">@email</InputGroup.Text>
-										</InputGroup.Prepend>
-										<FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
-									</InputGroup>
-									<InputGroup size="sm" className="mb-3">
-										<InputGroup.Prepend>
-											<InputGroup.Text id="inputGroup-sizing-sm">Password</InputGroup.Text>
-										</InputGroup.Prepend>
-										<FormControl
-											type="password"
-											aria-label="Small"
-											aria-describedby="inputGroup-sizing-sm"
-										/>
-									</InputGroup>
-								</Card.Text>
-							</Card.Body>
-							<Card.Footer>
-								<Link to={`/home`}>
-									<Button variant="outline-danger">Log In</Button>
-								</Link>
-							</Card.Footer>
+									</InputGroup> */}
+										<InputGroup size="sm" className="mb-3">
+											<InputGroup.Prepend>
+												<InputGroup.Text id="inputGroup-sizing-sm">@email</InputGroup.Text>
+											</InputGroup.Prepend>
+											<FormControl
+												aria-label="Small"
+												aria-describedby="inputGroup-sizing-sm"
+												onChange={e => setUsername(e.target.value)}
+											/>
+										</InputGroup>
+										<InputGroup size="sm" className="mb-3">
+											<InputGroup.Prepend>
+												<InputGroup.Text id="inputGroup-sizing-sm">Password</InputGroup.Text>
+											</InputGroup.Prepend>
+											<FormControl
+												type="password"
+												aria-label="Small"
+												aria-describedby="inputGroup-sizing-sm"
+												onChange={e => setPassword(e.target.value)}
+											/>
+										</InputGroup>
+									</Card.Text>
+								</Card.Body>
+								<Card.Footer>
+									<Button type="submit" variant="outline-danger">
+										Log In
+									</Button>
+								</Card.Footer>
+							</form>
 						</Card>
 						{/* Card para Register */}
 						<Card className="Card text-light text-center">
 							<Card.Img variant="top" src="https://wallpaperaccess.com/full/3333882.jpg" />
-							<form onSubmit={e => handleSubmit(e)}>
+							<form onSubmit={e => actionRegister(e)}>
 								<Card.Body>
 									<Card.Title>Register</Card.Title>
 									<Card.Text>

@@ -78,16 +78,49 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				const newFavorites = store.favorites.filter((item, i) => i !== id);
 				setStore({ favorites: newFavorites });
+			},
+
+			// VALIDACIONES
+			// VALIDACIONES
+			// VALIDACIONES
+
+			// VALIDACION DE REGISTER
+			// VALIDACION DE REGISTER
+			// VALIDACION DE REGISTER
+			validacionRegistro: (username, email, password) => {
+				fetch("https://3000-rose-pelican-9fn5mns8.ws-us03.gitpod.io/register/", {
+					method: "POST",
+					headers: { "Content-Type": "application/json" },
+					body: JSON.stringify({ name: username, email: email, password: password })
+				})
+					.then(response => response.json())
+					.then(data => {
+						console.table("success", data);
+						setRedirect(true);
+					})
+					.catch(error => {
+						console.table("Error", error);
+					});
+			},
+			// VALIDACION DE LOGIN
+			// VALIDACION DE LOGIN
+			// VALIDACION DE LOGIN
+			validacionLogin: (email, password) => {
+				fetch("https://3000-rose-pelican-9fn5mns8.ws-us03.gitpod.io/login/")
+					.then(res => {
+						if (res.ok) res.json();
+						// eso en caso que sea 200
+						else if (res.status === 401) {
+							console.table("Credenciales invalidos"); // culpa del usuario
+						} else if (res.status === 400) {
+							console.table("Formato de email o password incorrecto!"); // culpa de autenticacion
+						} else throw Error("Error desconocido!"); //
+					})
+					.then(data => {
+						localStorage.setItem("jwt-token", data.token);
+					})
+					.catch(error => console.error("Uknown error around!", error));
 			}
-
-			// VALIDACIONES
-			// VALIDACIONES
-			// VALIDACIONES
-
-			// VALIDACION DE REGISTER
-			// VALIDACION DE REGISTER
-			// VALIDACION DE REGISTER
-			// Hola que tal
 		}
 	};
 };
