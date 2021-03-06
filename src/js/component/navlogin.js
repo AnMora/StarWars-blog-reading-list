@@ -13,7 +13,7 @@ export const Navlogin = () => {
 			<Link to="/">
 				<img
 					className="LOGO"
-					src="https://www.5minutesformom.com/wp-content/uploads/2015/08/Star-Wars-Logo.png"
+					src="http://pngimg.com/uploads/star_wars_logo/star_wars_logo_PNG14.png"
 					alt="MORA"
 				/>
 			</Link>
