@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { Redirect } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { Context } from "./store/appContext";
-import { Container, Jumbotron, Row, Col, Card, CardDeck, InputGroup, FormControl, Button, Form } from "react-bootstrap";
+import { Container, Row, Col, Card, CardDeck, InputGroup, FormControl, Button } from "react-bootstrap";
 import "../styles/home.scss";
 
 export const Login = () => {
@@ -14,7 +14,7 @@ export const Login = () => {
 
 	const actionRegister = e => {
 		if (username === "" || email === "" || password === "") {
-			alert("Faltan datos por llenar!");
+			alert("ActionRegister: Faltan datos por llenar!");
 		} else {
 			alert(username, email);
 			actions.validacionRegistro(username, email, password);
@@ -23,9 +23,9 @@ export const Login = () => {
 
 	const actionLogin = e => {
 		if (email === "" || password === "") {
-			alert("Faltan datos por llenar!");
+			alert("Actionlogin: Faltan datos por llenar!");
 		} else {
-			alert(username, email);
+			alert(email);
 			actions.validacionLogin(email, password);
 		}
 	};
@@ -68,9 +68,10 @@ export const Login = () => {
 												<InputGroup.Text id="inputGroup-sizing-sm">@email</InputGroup.Text>
 											</InputGroup.Prepend>
 											<FormControl
+												id="email"
+												onChange={e => setEmail(e.target.value)}
 												aria-label="Small"
 												aria-describedby="inputGroup-sizing-sm"
-												onChange={e => setUsername(e.target.value)}
 											/>
 										</InputGroup>
 										<InputGroup size="sm" className="mb-3">
@@ -78,10 +79,11 @@ export const Login = () => {
 												<InputGroup.Text id="inputGroup-sizing-sm">Password</InputGroup.Text>
 											</InputGroup.Prepend>
 											<FormControl
+												id="password"
+												onChange={e => setPassword(e.target.value)}
 												type="password"
 												aria-label="Small"
 												aria-describedby="inputGroup-sizing-sm"
-												onChange={e => setPassword(e.target.value)}
 											/>
 										</InputGroup>
 									</Card.Text>
