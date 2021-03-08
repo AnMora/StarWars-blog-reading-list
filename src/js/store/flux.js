@@ -89,7 +89,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			// VALIDACION DE REGISTER
 			// VALIDACION DE REGISTER
 			validacionRegistro: (username, email, password) => {
-				fetch("https://3000-white-cardinal-sk1fnk07.ws-us03.gitpod.io//register/", {
+				fetch("https://3000-white-cardinal-sk1fnk07.ws-us03.gitpod.io/register/", {
 					method: "POST",
 					headers: { "Content-Type": "application/json" },
 					body: JSON.stringify({ name: username, email: email, password: password })
@@ -110,25 +110,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			// VALIDACION DE LOGIN
 			// VALIDACION DE LOGIN
 			// VALIDACION DE LOGIN
-			// validacionLogin: (email, password) => {
-			// 	fetch("https://3000-crimson-mule-9csox4pg.ws-us03.gitpod.io/login/")
-			// 		.then(res => {
-			// 			if (res.ok) res.json();
-			// 			// eso en caso que sea 200
-			// 			else if (res.status === 401) {
-			// 				alert("Credenciales invalidos"); // culpa del usuario
-			// 			} else if (res.status === 400) {
-			// 				alert("Formato de email o password incorrecto!"); // culpa de autenticacion
-			// 			} else throw Error("Error desconocido!"); //
-			// 		})
-			// 		.then(data => {
-			// 			localStorage.setItem("jwt-token", data.token);
-			// 		})
-			// 		.catch(error => console.error("Uknown error around!", error));
-			// }
-
 			validacionLogin: async (email, password) => {
-				const url = "https://3000-white-cardinal-sk1fnk07.ws-us03.gitpod.io//login/";
+				const url = "https://3000-white-cardinal-sk1fnk07.ws-us03.gitpod.io/login/";
 				const response = await fetch(url, {
 					method: "POST",
 					headers: { "Content-Type": "application/json" },
@@ -151,6 +134,23 @@ const getState = ({ getStore, getActions, setStore }) => {
 			logout: () => {
 				setStore({ boolean: false });
 			}
+
+			// validacionLogin: (email, password) => {
+			// 	fetch("https://3000-crimson-mule-9csox4pg.ws-us03.gitpod.io/login/")
+			// 		.then(res => {
+			// 			if (res.ok) res.json();
+			// 			// eso en caso que sea 200
+			// 			else if (res.status === 401) {
+			// 				alert("Credenciales invalidos"); // culpa del usuario
+			// 			} else if (res.status === 400) {
+			// 				alert("Formato de email o password incorrecto!"); // culpa de autenticacion
+			// 			} else throw Error("Error desconocido!"); //
+			// 		})
+			// 		.then(data => {
+			// 			localStorage.setItem("jwt-token", data.token);
+			// 		})
+			// 		.catch(error => console.error("Uknown error around!", error));
+			// }
 		}
 	};
 };

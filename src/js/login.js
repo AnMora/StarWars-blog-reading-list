@@ -25,7 +25,7 @@ export const Login = () => {
 		if (email === "" || password === "") {
 			alert("Actionlogin: Faltan datos por llenar!");
 		} else {
-			alert(email);
+			console.log(email);
 			actions.validacionLogin(email, password);
 		}
 	};
@@ -94,6 +94,7 @@ export const Login = () => {
 									</Button>
 								</Card.Footer>
 							</form>
+							{store.boolean ? <Redirect to="/home" /> : ""}
 						</Card>
 						{/* Card para Register */}
 						<Card className="Card text-light text-center">
@@ -146,7 +147,7 @@ export const Login = () => {
 								</Card.Footer>
 							</form>
 							{/* {redirect ? <Redirect to="/home" /> : ""} */}
-							{store.boolean ? <Redirect to="/home" /> : ""}
+							{/* {store.boolean ? <Redirect to="/home" /> : ""} */}
 						</Card>
 					</CardDeck>
 				</Col>
