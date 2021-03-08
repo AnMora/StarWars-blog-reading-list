@@ -2,8 +2,9 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 //import AnMora from "../../img/MORAnew (1).png";
 import "../../styles/home.scss";
-import { Nav, Dropdown, DropdownButton } from "react-bootstrap";
+import { Nav, Dropdown, DropdownButton, Button } from "react-bootstrap";
 import { Context } from "../store/appContext";
+import { Redirect } from "react-router-dom";
 
 export const Navbar = () => {
 	const { store, actions } = useContext(Context);
@@ -53,7 +54,10 @@ export const Navbar = () => {
 						})
 					)}
 				</DropdownButton>
-				{/* </Link> */}
+				<Button href="#Logout" variant="outline-light" onClick={actions.logout}>
+					Log Out
+				</Button>
+				{store.boolean ? "" : <Redirect to="/" />}
 			</div>
 		</Nav>
 	);

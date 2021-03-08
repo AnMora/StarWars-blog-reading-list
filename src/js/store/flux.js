@@ -89,7 +89,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			// VALIDACION DE REGISTER
 			// VALIDACION DE REGISTER
 			validacionRegistro: (username, email, password) => {
-				fetch("https://3000-crimson-mule-9csox4pg.ws-us03.gitpod.io/register/", {
+				fetch("https://3000-white-cardinal-sk1fnk07.ws-us03.gitpod.io//register/", {
 					method: "POST",
 					headers: { "Content-Type": "application/json" },
 					body: JSON.stringify({ name: username, email: email, password: password })
@@ -128,7 +128,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			// }
 
 			validacionLogin: async (email, password) => {
-				const url = "https://3000-crimson-mule-9csox4pg.ws-us03.gitpod.io/login/";
+				const url = "https://3000-white-cardinal-sk1fnk07.ws-us03.gitpod.io//login/";
 				const response = await fetch(url, {
 					method: "POST",
 					headers: { "Content-Type": "application/json" },

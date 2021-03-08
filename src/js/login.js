@@ -145,7 +145,8 @@ export const Login = () => {
 									</Button>
 								</Card.Footer>
 							</form>
-							{redirect ? <Redirect to="/home" /> : ""}
+							{/* {redirect ? <Redirect to="/home" /> : ""} */}
+							{store.boolean ? <Redirect to="/home" /> : ""}
 						</Card>
 					</CardDeck>
 				</Col>
